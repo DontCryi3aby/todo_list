@@ -5,6 +5,9 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import SortByAlphaOutlinedIcon from "@mui/icons-material/SortByAlphaOutlined";
 import UpcomingOutlinedIcon from "@mui/icons-material/UpcomingOutlined";
+import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
+
 import {
   Avatar,
   Box,
@@ -39,32 +42,42 @@ export default function Sidebar() {
   };
 
   return (
-    <Box
-      sx={{
-        height: "100vh",
-      }}
-    >
+    <Box>
       <Box mx={2} sx={{ color: "black" }}>
         <List component="nav" aria-label="nav">
-          <Box display="flex" alignItems="center" gap={1}>
-            <Tooltip title="Account settings">
-              <IconButton
-                onClick={handleClick}
-                size="small"
-                sx={{ ml: 2 }}
-                aria-controls={open ? "account-menu" : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? "true" : undefined}
-              >
-                <Avatar
-                  sx={{ width: 32, height: 32 }}
-                  src="https://dcff1xvirvpfp.cloudfront.net/69a9c4688b8a49939e95c08d1da50c20_big.jpg"
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Box display="flex" alignItems="center" gap={1}>
+              <Tooltip title="Account settings">
+                <IconButton
+                  onClick={handleClick}
+                  size="small"
+                  sx={{ ml: 2 }}
+                  aria-controls={open ? "account-menu" : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? "true" : undefined}
                 >
-                  abc
-                </Avatar>
-              </IconButton>
-            </Tooltip>
-            <Typography sx={{ fontWeight: 600 }}>i3oyhp</Typography>
+                  <Avatar
+                    sx={{ width: 32, height: 32 }}
+                    src="https://dcff1xvirvpfp.cloudfront.net/69a9c4688b8a49939e95c08d1da50c20_big.jpg"
+                  >
+                    abc
+                  </Avatar>
+                </IconButton>
+              </Tooltip>
+              <Typography sx={{ fontWeight: 600 }}>i3oyhp</Typography>
+            </Box>
+            <Box>
+              <Tooltip title="Notifications">
+                <NotificationsActiveOutlinedIcon
+                  fontSize="small"
+                  sx={{ cursor: "pointer" }}
+                />
+              </Tooltip>
+            </Box>
           </Box>
           <Menu
             anchorEl={anchorEl}
@@ -107,7 +120,7 @@ export default function Sidebar() {
               </Box>
             </MenuItem>
             <Divider />
-            <Link to="/admin/account">
+            <Link to="#">
               <MenuItem onClick={handleClose}>
                 <ListItemIcon>
                   <PermIdentityIcon fontSize="small" />
@@ -115,12 +128,20 @@ export default function Sidebar() {
                 Profile
               </MenuItem>
             </Link>
-            <Link to="/admin/settings">
+            <Link to="#">
               <MenuItem onClick={handleClose}>
                 <ListItemIcon>
                   <SettingsOutlinedIcon fontSize="small" />
                 </ListItemIcon>
                 Settings
+              </MenuItem>
+            </Link>
+            <Link to="/login">
+              <MenuItem onClick={handleClose}>
+                <ListItemIcon>
+                  <LogoutOutlinedIcon fontSize="small" />
+                </ListItemIcon>
+                Log out
               </MenuItem>
             </Link>
           </Menu>

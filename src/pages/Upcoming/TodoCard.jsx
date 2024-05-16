@@ -49,6 +49,8 @@ function TodoCard({ onCloseCard, todoListState }) {
         ...prev,
         { title, description, dateTodo, priority },
       ]);
+
+      console.log({ title, description, dateTodo, priority });
       onCloseCard();
     }
   };
