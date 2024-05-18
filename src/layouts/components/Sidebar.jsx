@@ -47,7 +47,7 @@ export default function Sidebar() {
   };
 
   return (
-    <Box sx={{ background: "#fcfaf8", minHeight: "100vh" }}>
+    <Box sx={{ minHeight: "100vh" }}>
       <Box mx={2} sx={{ color: "black" }}>
         <List component="nav" aria-label="nav">
           <Box
