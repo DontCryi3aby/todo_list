@@ -11,8 +11,7 @@ import TodoContainer from "./TodoContainer";
 // ];
 
 function Upcoming() {
-  const now = dayjs();
-  const next7Day = [0, 1, 2, 3, 4, 5, 6].map((num) => now.add(num, "day"));
+  const daysOfWeek = [1, 2, 3, 4, 5, 6, 0].map((num) => dayjs().day(num));
 
   const customHeight = `calc(100vh - 177px)`;
 
@@ -43,7 +42,7 @@ function Upcoming() {
           height: customHeight,
         }}
       >
-        {next7Day.map((day) => (
+        {daysOfWeek.map((day) => (
           <TodoContainer day={day} key={day} />
         ))}
       </Box>

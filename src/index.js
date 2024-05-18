@@ -8,12 +8,7 @@ import theme from "./utils/theme";
 import { CssBaseline } from "@mui/material";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <App />
-  </ThemeProvider>
-);
+root.render(<App />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

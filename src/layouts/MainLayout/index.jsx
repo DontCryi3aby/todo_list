@@ -5,10 +5,10 @@ function MainLayout({ children }) {
   return (
     <Box>
       <Grid container spacing={2}>
-        <Grid item xs={2}>
+        <Grid item xs={3}>
           <Sidebar />
         </Grid>
-        <Grid item xs={10}>
+        <Grid item xs={9}>
           <Box>{children}</Box>
         </Grid>
       </Grid>

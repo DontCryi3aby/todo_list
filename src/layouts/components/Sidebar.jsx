@@ -24,9 +24,14 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
+import { ColorModeContext } from "../../App";
 
 export default function Sidebar() {
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const theme = useTheme();
+  const colorMode = React.useContext(ColorModeContext);
+
+  const [selectedIndex, setSelectedIndex] = React.useState();
 
   const handleListItemClick = (event, index) => {
     setSelectedIndex(index);
@@ -148,7 +153,7 @@ export default function Sidebar() {
 
           <Divider sx={{ pt: 1 }} />
 
-          <NavLink to="/tasks/add">
+          <NavLink exact to="/tasks/add">
             <ListItemButton
               selected={selectedIndex === 0}
               onClick={(event) => handleListItemClick(event, 0)}
@@ -159,7 +164,7 @@ export default function Sidebar() {
               <ListItemText primary="Add task" />
             </ListItemButton>
           </NavLink>
-          <NavLink to="/search">
+          <NavLink exact to="/search">
             <ListItemButton
               selected={selectedIndex === 1}
               onClick={(event) => handleListItemClick(event, 1)}
@@ -171,7 +176,7 @@ export default function Sidebar() {
             </ListItemButton>
           </NavLink>
 
-          <NavLink to="/inbox">
+          <NavLink exact to="/inbox">
             <ListItemButton
               selected={selectedIndex === 2}
               onClick={(event) => handleListItemClick(event, 2)}
@@ -182,7 +187,7 @@ export default function Sidebar() {
               <ListItemText primary="Inbox" />
             </ListItemButton>
           </NavLink>
-          <NavLink to="/upcoming">
+          <NavLink exact to="/upcoming">
             <ListItemButton
               selected={selectedIndex === 3}
               onClick={(event) => handleListItemClick(event, 3)}
@@ -193,7 +198,7 @@ export default function Sidebar() {
               <ListItemText primary="Upcoming" />
             </ListItemButton>
           </NavLink>
-          <NavLink to="/filter">
+          <NavLink exact to="/filter">
             <ListItemButton
               selected={selectedIndex === 4}
               onClick={(event) => handleListItemClick(event, 4)}
