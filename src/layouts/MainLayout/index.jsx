@@ -9,7 +9,7 @@ function MainLayout({ children }) {
           <Sidebar />
         </Grid>
         <Grid item xs={9}>
-          <Box>{children}</Box>
+          <Box sx={{ background: "#f9f9f9" }}>{children}</Box>
         </Grid>
       </Grid>
     </Box>

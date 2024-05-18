@@ -1,4 +1,4 @@
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Divider, Stack, Typography } from "@mui/material";
 import dayjs from "dayjs";
 import DatePick from "./DatePick";
 import TodoContainer from "./TodoContainer";
@@ -13,16 +13,16 @@ import TodoContainer from "./TodoContainer";
 function Upcoming() {
   const daysOfWeek = [1, 2, 3, 4, 5, 6, 0].map((num) => dayjs().day(num));
 
-  const customHeight = `calc(100vh - 177px)`;
+  // const customHeight = `calc(100vh - 177px)`;
 
   return (
-    <Box sx={{ padding: "60px 20px" }}>
+    <Stack sx={{ minHeight: "100vh" }}>
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
-          height: 100,
           justifyContent: "center",
+          padding: "60px 20px 0",
         }}
       >
         <Typography variant="h4" fontSize={26} fontWeight={700} mb={1}>
@@ -30,23 +30,23 @@ function Upcoming() {
         </Typography>
         <DatePick />
       </Box>
-      <Divider />
       <Box
         spacing={2}
-        px={1}
-        mt={2}
         sx={{
           display: "flex",
           flexWrap: "nowrap",
           overflowX: "scroll",
-          height: customHeight,
+          flex: 1,
+          borderTop: "1px solid rgba(0, 0, 0, 0.12)",
+          mt: "20px",
+          padding: "20px 12px 0",
         }}
       >
         {daysOfWeek.map((day) => (
           <TodoContainer day={day} key={day} />
         ))}
       </Box>
-    </Box>
+    </Stack>
   );
 }
 
