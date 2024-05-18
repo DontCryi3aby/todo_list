@@ -38,7 +38,7 @@ export default function LoginPage() {
   return (
     <Box
       maxWidth="xl"
-      margin="200px auto"
+      margin="50px auto"
       sx={{ display: "flex", alignItems: "center", gap: 3 }}
     >
       <Paper sx={{ p: 5, flex: 1, minHeight: 630 }}>
