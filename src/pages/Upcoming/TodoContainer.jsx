@@ -218,6 +218,7 @@ function TodoContainer({ day }) {
             <TodoCard
               onCloseCard={handleCloseTodoCard}
               todoListState={[TodoList, setTodoList]}
+              day={day}
             />
           </Box>
         </Menu>

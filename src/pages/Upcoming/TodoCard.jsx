@@ -24,7 +24,7 @@ import React, { useState } from "react";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
-function TodoCard({ onCloseCard, todoListState }) {
+function TodoCard({ onCloseCard, todoListState, day }) {
   const [anchorElDateTodo, setAnchorElDateTodo] = useState(null);
   const openDateTodo = Boolean(anchorElDateTodo);
   const handleClick = (event) => {
@@ -36,7 +36,7 @@ function TodoCard({ onCloseCard, todoListState }) {
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [dateTodo, setDateTodo] = useState(dayjs(new Date()));
+  const [dateTodo, setDateTodo] = useState(dayjs(day));
   const [priority, setPriority] = useState(1);
 
   const [TodoList, setTodoList] = todoListState;
